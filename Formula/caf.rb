@@ -22,10 +22,8 @@ class Caf < Formula
 
   def install
     system "./configure", "--prefix=#{prefix}",
-                          "--build-static",
-                          "--no-examples",
-                          "--no-unit-tests",
-                          "--no-opencl"
+                          "--disable-shared-libs",
+                          "--disable-testing"
     system "make", "--directory=build", "install"
   end
 
